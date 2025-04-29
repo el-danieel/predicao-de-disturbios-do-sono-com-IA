@@ -72,3 +72,13 @@ Os movimentos das pernas são muitas vezes observados em indivíduos com síndro
 Hipopneia Mista (MH)
 
 A hipopneia mista refere-se a episódios de respiração superficial em que o fluxo de ar é reduzido para menos da metade do normal, geralmente acompanhada de dessaturação de oxigênio. Esse tipo de hipopneia é chamado de "mista" porque pode envolver características tanto de obstrução quanto de falha central.
+
+Distribuição dos eventos no dataset:
+![Distribuição de idade do público de estudo](images/plot_events_distribution.png)
+A figura mostra a distribuição dos eventos no dataset, com a maioria correspondendo a épocas sem eventos relatados (NaN), que representam 76,52% do total, totalizando 115.911 épocas do experimento (análise de 30 segundos). Os eventos mais frequentes incluem Despertar Súbito (AR), com 12,68% das épocas (18.486), e Hipopneia Obstrutiva (OH), com 2,22% (3.335 épocas). Outros eventos registrados são Despertar (Awake), com 2,48% (3.629 épocas); Hipopneia Mista (MH), com 1,42% (2.145 épocas); Movimento Periódico da Perna (PLM), com 1,58% (2.337 épocas); Apneia Obstrutiva (OA), com 0,84% (1.242 épocas); Movimento Rápido dos Olhos (REM), com 0,76% (1.120 épocas); e Hipopneia Central (CH), com 0,93% (1.360 épocas).
+
+Distribuição das épocas por estágio do sono (Stage) no dataset:
+![Distribuição de idade do público de estudo](images/plot_sleep_stages.png)
+A figura apresenta um gráfico detalhando a quantidade de épocas em cada estágio do sono no dataset: 32.426 épocas no estágio W (Despertado), 47.969 épocas no estágio N2, 27.134 épocas no estágio N3, 17.138 épocas no estágio N1, 19.467 épocas no estágio R (REM) e 648 épocas no estágio U.
+
+Foi utilizado o modelo de rede neural Perceptron Multicamadas (MLP), um modelo de aprendizado de máquina supervisionado. Neste modelo, os dados são recebidos na entrada e cada neurônio equivale a um atributo dos dados do conjunto estudado, estando relacionado a todos os neurônios da próxima camada, se repetindo por um número X de camadas, onde os neurônios calculam a relação entre os dados apresentados. Na saída o resultado é a classificação da amostra. O modelo foi treinado utilizando de entrada 4 amostras do dataset, que equivale a 120 segundos, para prever a amostra seguinte, de 30 segundos.
